@@ -1,0 +1,30 @@
+﻿@model ProductListViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table table-striped">
+        <th>PersonID</th>
+        <th>Name</th>
+        <th>LastName</th>
+      
+        @{ foreach (var item in Model.AbsolutDatas)
+            {
+                <tr>
+                    <td>@item.PersonID</td>
+                    <td>@item.Name</td>
+                    <td>@item.LastName</td>
+                </tr>
+            }
+        }
+    </table>
+</div>
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn"
+     page-class-normal="btn-seconadary"
+     page-class-selected="btn-primary"
+ 
+     class="btn-group pull-right m-1">
+
+</div>
